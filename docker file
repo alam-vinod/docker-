@@ -25,6 +25,7 @@ EXPOSE :: here we are giving port number
 EXPOSE 8080
 ENV :: to set envirolment varibles
 
+Dockerfile for testing
 FROM ubuntu
 RUN apt-get update -y
 RUN apt install java
