@@ -34,6 +34,8 @@ WORKDIR vinod
 ADD webserver link like tomcat
 RUN tar xvf tomcat.tar vinod
 RUN mv tomcat.8.5.8 tomcat
+ENV name vinod
+ENV a viki
 CMD["/opt/vinod/tomcat/bin/catalina.sh","run"]
 EXPOSE 8081
 
