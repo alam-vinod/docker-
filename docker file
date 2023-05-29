@@ -24,3 +24,15 @@ DOCKERFILE >> DOCKER IMAGE >> DOCKER CONTAINER
 EXPOSE :: here we are giving port number 
 EXPOSE 8080
 ENV :: to set envirolment varibles
+
+FROM ubuntu
+RUN apt-get update -y
+RUN apt install java
+RUN mkdir vinod
+WORKDIR vinod
+ADD webserver link like tomcat
+RUN tar xvf tomcat.tar vinod
+RUN mv tomcat.8.5.8 tomcat
+CMD["/opt/vinod/tomcat/bin/catalina.sh","run"]
+EXPOSE 8081
+
