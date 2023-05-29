@@ -1,0 +1,14 @@
+here we can store the data perminent and we can change here what ever we want 
+once we write on docker file all the needs
+
+below we can show docker file life cycle
+DOCKERFILE >> DOCKER IMAGE >> DOCKER CONTAINER 
+ in docker file we should be user capital letters only for commands
+ 
+ FROM :: to pull the base image from docker hub 
+ ex : FROM ubuntu
+ RUN  :: here we can run linux and bash commands 
+ 
+ CMD  :: its providing default commands while install a new container and also we can overwrite the command
+ 
+ ENTRYPOINT :: in this command we wont do change overwrite in what ever giving in docker file
