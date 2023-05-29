@@ -8,7 +8,19 @@ DOCKERFILE >> DOCKER IMAGE >> DOCKER CONTAINER
  FROM :: to pull the base image from docker hub 
  ex : FROM ubuntu
  RUN  :: here we can run linux and bash commands 
- 
+ RUN apt install java -y or mkdir vinod or mkdir tomcat
  CMD  :: its providing default commands while install a new container and also we can overwrite the command
- 
+ while we are giving any script we can run "/opt/tomcat/bin/catalin.sh" this is a script . if we want to run this script we use "RUN" command.
+ CMD["/opt/tomcat/bin/catalina.sh","RUN"]
  ENTRYPOINT :: in this command we wont do change overwrite in what ever giving in docker file
+ 
+ WORKDIR ::  to set the work directory like where we want to work
+ WORKDIR /opt/viki
+ COPY :: here we can copy the files from local to server
+ COPY /opt/viki  /opt/tomcat
+ 
+ ADD :: its a similor to copy command and mainly it is user to copy the file from web-server
+ ADD web link 
+EXPOSE :: here we are giving port number 
+EXPOSE 8080
+ENV :: to set envirolment varibles
