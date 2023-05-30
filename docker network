@@ -1,0 +1,39 @@
+docker network we are connected multiple user networks. if we want connect defealt network we can by using ip address
+
+default networks are
+1.bridge network
+2.host network
+3.null network
+
+docker network create --driver=bridge --subnet=172.20.1.0/24 --gateway=172.20.1.254 web-network
+docker network create --driver=bridge --subnet=172.20.2.254 --gateway=172.20.2.254 app-network
+docker network creae --driver=bridge --subnet=172.20.3.0/24 --gateway=172.20.3.254 db-network
+
+docker network ls
+web-network
+app-network
+db-network
+
+here am instaling container in each network as per user my requirement
+
+docker run --rm -itd --name c1 --hostename c1-inside -p 8000:80 --network app_network 
+docker run --rm -itd --name c2 --hostname c2-inside -p 80001:80 --network app_network
+docker run --rm -itd --name c3 --hostname c3-inside -p 80002:80 --network db_network nginx
+docker run --rm -itd --name c4 --hostname c4-inside -p 8003:80 --network db_network
+docker run -itd --name c5 --hostname c5-inside -p 8004:80 --network web_network nginx
+
+while we ping before should be install showing below commads in each container
+apt-get update
+apt-get install inetutils-ping -y
+
+docker exec -it c1 ping c2 bash
+
+supose we want to connect one network to another network user below commands
+
+docker network connect app_network web_network
+docker network connect db_network web_network
+
+
+
+
+ 
