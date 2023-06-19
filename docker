@@ -1,3 +1,6 @@
 in below line are insatll docker in eassy way
 
 apt-get update && apt install docker.io && usermod -aG docker $USER && chmod 666 /var/run/docker.sock
+
+
+docker run -it -p 8080:8080 sundowndev/phoneinfoga serve -p 8080
